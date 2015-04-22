@@ -1,3 +1,85 @@
 /**
- *  Functions
+ * Reset all the styles from an element.
  */
+.reset() {
+	margin: 0;
+	padding: 0;
+	border: none;
+	text-decoration: none;
+	line-height: 1;
+	list-style: none;
+	font-weight: normal;
+}
+
+/**
+ * Variations of the Border selector
+ * @side = which side of the element the border takes place.
+ * @px = the thickness of the border
+ * @style = the style of the border | (solid, dashed, dotted...)
+ * @color = the color of the border
+ */
+.border(@side, @px, @style, @color) when( @side = top ) {
+	border-top: @px @style @color;
+}
+.border(@side, @px, @style, @color) when( @side = right ) {
+	border-right: @px @style @color;
+}
+.border(@side, @px, @style, @color) when( @side = bottom ) {
+	border-bottom: @px @style @color;
+}
+.border(@side, @px, @style, @color) when( @side = left ) {
+	border-left: @px @style @color;
+}
+.border(@px, @style, @color) {
+	border: @px @style @color;
+}
+
+/**
+ * Variations of the MARGIN property
+ * @side = which side the margin takes place.
+ * @px = the size of the margin.
+ * @isAuto = indicates that the margin will be auto on the left and right side.
+ */
+.margin(@side, @px) when( @side = top ) {
+	margin-top: @px;
+}
+.margin(@side, @px) when( @side = right ) {
+	margin-right: @px;
+}
+.margin(@side, @px) when( @side = bottom ) {
+	margin-bottom: @px;
+}
+.margin(@side, @px) when( @side = left ) {
+	margin-left: @px;
+}
+.margin(@px, @isAuto ) when (@isAuto = true) {
+	margin: @px auto;
+}
+.margin(@px) {
+	margin: @px;
+}
+
+/**
+ * Variations of the PADDING property
+ * @side = which side the padding takes place.
+ * @px = the size of the padding.
+ * @isAuto = indicates that the padding will be auto on the left and right side.
+ */
+.padding(@side, @px) when( @side = top ) {
+	padding-top: @px;
+}
+.padding(@side, @px) when( @side = right ) {
+	padding-right: @px;
+}
+.padding(@side, @px) when( @side = bottom ) {
+	padding-bottom: @px;
+}
+.padding(@side, @px) when( @side = left ) {
+	padding-left: @px;
+}
+.padding(@px, @isAuto ) when (@isAuto = true) {
+	padding: @px auto;
+}
+.padding(@px) {
+	padding: @px;
+}
